@@ -10,12 +10,12 @@ const batches = readdirSync(LCN_PATH)
   .filter((name) => /^BATCH-\d+$/.test(name))
 
 // 3) Read & collect each batch’s array
-let all: string[] = []
+let all = []
 for (const batch of batches) {
   // require the TS file via its transpiled JS in dev/Prod
   // (Next will compile .ts → .js)
   // so we point at the .js counterpart:
-  const mod = require(join(LCN_PATH, batch, 'LCN_Data.js'))  
+  const mod = require(join(LCN_PATH, batch, 'LCN_Data.js'))
   if (Array.isArray(mod.default)) {
     all = all.concat(mod.default)
   }
