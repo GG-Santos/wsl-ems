@@ -28,7 +28,7 @@ type Params = {
 };
 
 export function generateStaticParams(): Params[] {
-  return validLCNs.map((lcn) => ({ lcn }));
+  return validLCNs.map((lcn) => ({ lcn }))
 }
 
 export async function generateMetadata(props: {
@@ -40,17 +40,17 @@ export async function generateMetadata(props: {
   };
 }
 
-export default async function LcnPage(props: {
-  params: Params | Promise<Params>;
-}) {
+export default async function LcnPage(
+  props: { params: Promise<Params> }
+) {
   const { lcn } = await props.params;
+  let lcnData: LcnData
 
   const batchFolder = lcnToBatch[lcn];
   if (!batchFolder) return notFound();
 
   try {
-    const lcnData: LcnData = (await import(`@/data/LCN/${batchFolder}/${lcn}`))
-      .default;
+    lcnData = (await import(`@/data/LCN/${batchFolder}/${lcn}`)).default;
     const expired = isLCNExpired(lcnData.expiration);
 
     if (expired) {
