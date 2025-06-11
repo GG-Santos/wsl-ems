@@ -31,14 +31,11 @@ export function generateStaticParams(): Params[] {
   return validLCNs.map((lcn) => ({ lcn }))
 }
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { lcn } = await params;
-  return {
-    title: `License Info for ${lcn}`,
-  };
-}
-
-export default async function LcnPage({ params }: { params: Params }) {
+export default async function LcnPage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
   const { lcn } = await params;
   let lcnData: LcnData
 
