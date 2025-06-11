@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "gen:lcn": "ts-node scripts/merge-lcn.ts",
+    "gen:lcn": "ts-node ./src/scripts/mergeLCNs.ts",
     "build": "npm run gen:lcn && next build",
     "start": "next start",
     "lint": "next lint"
