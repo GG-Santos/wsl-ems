@@ -32,14 +32,14 @@ export function generateStaticParams(): Params[] {
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { lcn } = params;
+  const { lcn } = await params;
   return {
     title: `License Info for ${lcn}`,
   };
 }
 
 export default async function LcnPage({ params }: { params: Params }) {
-  const { lcn } = params;
+  const { lcn } = await params;
   let lcnData: LcnData
 
   const batchFolder = lcnToBatch[lcn];
