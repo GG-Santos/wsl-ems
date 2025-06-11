@@ -10,7 +10,7 @@ const batches = readdirSync(LCN_PATH)
   .filter((name) => /^BATCH-\d+$/.test(name))
 
 // 3) Read & collect each batch’s array
-let all = []
+let all: string[] = []
 for (const batch of batches) {
   // require the TS file via its transpiled JS in dev/Prod
   // (Next will compile .ts → .js)
