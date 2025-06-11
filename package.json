@@ -4,11 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-<<<<<<< HEAD
     "gen:lcn": "node dist/scripts/mergeLCNs.js",
-=======
-    "gen:lcn": "node dist/scripts/mergeLCNs.js"
->>>>>>> 4999778c62601009c0ba0fa08972f6fff5d46d77
     "build": "npm run gen:lcn && next build",
     "start": "next start",
     "lint": "next lint"
