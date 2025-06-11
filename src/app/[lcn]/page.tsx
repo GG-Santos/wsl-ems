@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faUser } from "@fortawesome/free-solid-svg-icons";
 import { getTimeFromNow } from "@/lib/dateDiffFromNow";
 import { addNumberStrings } from "@/lib/addStrings";
+import { isLCNExpired } from "@/lib/dateExpiry";
 
 type LcnData = {
   lcn: string;
@@ -50,6 +51,24 @@ export default async function LcnPage(props: {
   try {
     const lcnData: LcnData = (await import(`@/data/LCN/${batchFolder}/${lcn}`))
       .default;
+    const expired = isLCNExpired(lcnData.expiration);
+
+    if (expired) {
+      // 🔁 RENDER THIS BLOCK IF EXPIRED
+      return (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center p-8">
+          <h1 className="text-2xl font-bold text-red-600">License Expired</h1>
+          <h3 className="mt-2 text-sm text-gray-600">
+            The license for <strong>{lcnData.name}</strong> (#{lcn}) expired on{" "}
+            <strong>{lcnData.expiration}</strong>.
+          </h3>
+          <br/>
+            <Button className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-md px-3 py-1.5">
+              <Link href="/">Return</Link>
+            </Button>
+        </div>
+      );
+    }
 
     return (
       <div className="bg-[#f9fafc] font-sans text-gray-700 min-h-screen p-4 sm:p-6 md:p-10">
@@ -64,13 +83,9 @@ export default async function LcnPage(props: {
                 </span>{" "}
               </div>
             </div>
-            <button
-              className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-md px-3 py-1.5"
-              type="button"
-            >
-              <FontAwesomeIcon icon={faPlus} />
-              <span>Verify</span>
-            </button>
+            <Button className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold rounded-md px-3 py-1.5">
+              <Link href="/">Return</Link>
+            </Button>
           </div>
           <div className="flex flex-col md:flex-row border-t border-gray-200">
             <div className="w-full md:w-1/3 border-r border-gray-200 p-5 space-y-5">
@@ -252,7 +267,15 @@ export default async function LcnPage(props: {
                           Total Evaluation
                         </th>
                         <th className="w-20 px-3 py-2 border-b border-gray-300 font-semibold">
-                          {addNumberStrings(lcnData.FWE, lcnData.SJE, lcnData.EP, lcnData.PAS, lcnData.CCST, lcnData.CCSM)}%
+                          {addNumberStrings(
+                            lcnData.FWE,
+                            lcnData.SJE,
+                            lcnData.EP,
+                            lcnData.PAS,
+                            lcnData.CCST,
+                            lcnData.CCSM
+                          )}
+                          %
                         </th>
                       </tr>
                     </thead>

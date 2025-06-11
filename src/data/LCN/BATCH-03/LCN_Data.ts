@@ -1,6 +1,6 @@
 // data/LCN/BATCH-02/LCN_Data.ts
 const validLCNs = [
-  "BEMT082024014",
+  "TEMPLATE-03",
 ];
 
 export default validLCNs;
