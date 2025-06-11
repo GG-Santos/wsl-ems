@@ -31,19 +31,15 @@ export function generateStaticParams(): Params[] {
   return validLCNs.map((lcn) => ({ lcn }))
 }
 
-export async function generateMetadata(props: {
-  params: Params | Promise<Params>;
-}): Promise<Metadata> {
-  const { lcn } = await props.params;
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { lcn } = params;
   return {
     title: `License Info for ${lcn}`,
   };
 }
 
-export default async function LcnPage(
-  props: { params: Promise<Params> }
-) {
-  const { lcn } = await props.params;
+export default async function LcnPage({ params }: { params: Params }) {
+  const { lcn } = params;
   let lcnData: LcnData
 
   const batchFolder = lcnToBatch[lcn];
