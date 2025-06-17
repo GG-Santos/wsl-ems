@@ -9,8 +9,10 @@ export function generateStaticParams(): Params[] {
   return validLCNs.map((lcn) => ({ lcn }));
 }
 
-export default async function Page({ params }: { params: Params }) {
-  const { lcn } = await params;
+export default async function LcnPage(
+  props: { params: Promise<Params> }
+) {
+  const { lcn } = await props.params;
   const batchFolder = lcnToBatch[lcn];
   if (!batchFolder) return notFound();
 
@@ -23,3 +25,7 @@ export default async function Page({ params }: { params: Params }) {
     return notFound();
   }
 }
+
+
+
+
