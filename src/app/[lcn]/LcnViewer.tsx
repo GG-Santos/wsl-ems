@@ -16,8 +16,25 @@ import {
   DialogTrigger,
   DialogFooter,
 } from "@/components/ui/dialog";
-import Certificate from "@/assets/svg/Certificate.svg"
+import Certificate from "@/assets/svg/Certificate.svg";
 import Image from "next/image";
+
+
+import ID0 from "@/assets/svg/License/0.svg";
+import ID1 from "@/assets/svg/License/1.svg";
+import ID2 from "@/assets/svg/License/2.svg";
+import ID3 from "@/assets/svg/License/3.svg";
+import ID4 from "@/assets/svg/License/4.svg";
+import ID5 from "@/assets/svg/License/5.svg";
+import ID6 from "@/assets/svg/License/6.svg";
+import ID7 from "@/assets/svg/License/7.svg";
+import ID8 from "@/assets/svg/License/8.svg";
+import ID9 from "@/assets/svg/License/9.svg";
+import ID10 from "@/assets/svg/License/10.svg";
+import ID11 from "@/assets/svg/License/11.svg";
+import ID12 from "@/assets/svg/License/12.svg";
+import ID13 from "@/assets/svg/License/13.svg";
+import ID14 from "@/assets/svg/License/14.svg";
 
 type LcnData = {
   lcn: string;
@@ -43,6 +60,8 @@ export default function LcnViewer({
   expired: boolean;
 }) {
   if (expired) {
+    // const licenseImageUrl = `/assets/img/ID/${lcn}.png`;
+
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-center p-8">
         <h1 className="text-2xl font-bold text-red-600">License Expired</h1>
@@ -100,7 +119,7 @@ export default function LcnViewer({
                     <DialogHeader>
                       <DialogTitle>Certificate</DialogTitle>
                       <DialogDescription>
-                        <Image src={Certificate} alt="Certificate"/>
+                        <Image src={Certificate} alt="Certificate" />
                       </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
@@ -115,7 +134,82 @@ export default function LcnViewer({
                   <DialogContent>
                     <DialogHeader>
                       <DialogTitle>License Card</DialogTitle>
-                      <DialogDescription>License</DialogDescription>
+                      <DialogDescription className="relative w-full h-auto">
+                        <Image
+                          src={ID0}
+                          alt="ID0"
+                        />
+                        <Image
+                          src={ID1}
+                          alt="ID1"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID2}
+                          alt="ID2"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID3}
+                          alt="ID3"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID4}
+                          alt="ID4"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID5}
+                          alt="ID5"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID6}
+                          alt="ID6"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID7}
+                          alt="ID7"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID8}
+                          alt="ID8"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID9}
+                          alt="ID9"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID10}
+                          alt="ID10"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID11}
+                          alt="ID11"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID12}
+                          alt="ID12"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID13}
+                          alt="ID13"
+                          className="absolute top-0 left-0"
+                        />
+                        <Image
+                          src={ID14}
+                          alt="ID14"
+                          className="absolute top-0 left-0"
+                        />
+                      </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
                 </Dialog>
