@@ -326,42 +326,42 @@ export default function LcnViewer({
                     lcnData.registration
                   })`}
                 />
-<Field
-  label="Remarks"
-  value={
-    (() => {
-      const ranking = lcnData.ranking?.toUpperCase();
-      let content = null;
+              <Field
+                label="Remarks"
+                value={
+                  (() => {
+                    const ranking = lcnData.ranking?.toUpperCase();
+                    let content = null;
 
-      if (ranking === "1") {
-        content = (
-          <div className="flex items-center text-yellow-600 font-semibold">
-            <span className="text-xs">🥇&nbsp;</span>
-            <span>Rank {ranking}</span>
-          </div>
-        );
-      } else if (ranking === "2") {
-        content = (
-          <div className="flex items-center text-gray-500 font-semibold">
-            <span className="text-xs">🥈&nbsp;</span>
-            <span>{ranking}</span>
-          </div>
-        );
-      } else if (ranking === "3") {
-        content = (
-          <div className="flex items-center gap-2 text-amber-700 font-semibold">
-            <span className="text-xs">🥉&nbsp;</span>
-            <span>{ranking}</span>
-          </div>
-        );
-      } else {
-        content = <span className="text-gray-700">{ranking || "N/A"}</span>;
-      }
+                    if (ranking === "1") {
+                      content = (
+                        <div className="flex items-center text-yellow-600 font-semibold">
+                          <span className="text-xs">🥇&nbsp;</span>
+                          <span>Rank {ranking}</span>
+                        </div>
+                      );
+                    } else if (ranking === "2") {
+                      content = (
+                        <div className="flex items-center text-gray-500 font-semibold">
+                          <span className="text-xs">🥈&nbsp;</span>
+                          <span>{ranking}</span>
+                        </div>
+                      );
+                    } else if (ranking === "3") {
+                      content = (
+                        <div className="flex items-center gap-2 text-amber-700 font-semibold">
+                          <span className="text-xs">🥉&nbsp;</span>
+                          <span>{ranking}</span>
+                        </div>
+                      );
+                    } else {
+                      content = <span className="text-gray-700">{ranking || "N/A"}</span>;
+                    }
 
-      return content;
-    })()
-  }
-/>
+                    return content;
+                  })()
+                }
+              />
 
               </form>
 
@@ -450,7 +450,7 @@ export default function LcnViewer({
   );
 }
 
-function Field({ label, value }: { label: string; value: string }) {
+function Field({ label, value }: { label: string; value: React.ReactNode; }) {
   return (
     <div>
       <label className="block text-[10px] font-semibold text-gray-600 mb-1">

@@ -10,7 +10,7 @@ const lcnData = {
   PAS: "19.7",
   CCST: "20",
   CCSM: "23.9",
-  Batch: "BATCH-09",
+  batch: "BATCH-09",
   ranking: "1"
 }
 
