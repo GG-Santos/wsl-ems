@@ -235,7 +235,7 @@ export default function LcnViewer({
 
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="flex h-full w-full items-center justify-center bg-[#f9fafc] font-sans text-gray-700 min-h-screen p-4 sm:p-6 md:p-10">
+      <ContextMenuTrigger className="flex h-full w-full items-center justify-center bg-[#f9fafc] font-sans text-gray-700 min-h-screen p-3 sm:p-6 md:p-8">
         <div className="max-w-7xl mx-auto bg-white rounded-lg border border-gray-200 shadow-sm">
           <div className="flex items-center justify-between bg-white p-4 rounded-md mx-4">
             <div className="flex items-center gap-2 text-blue-700 font-semibold text-sm">
@@ -256,7 +256,7 @@ export default function LcnViewer({
                   alt="Profile"
                   className="object-cover w-full h-full"
                   height="375"
-                  src="https://storage.googleapis.com/a1aa/image/b4e644f7-5b41-4833-dd1b-937d1072abf4.jpg"
+                  src={`/assets/img/ID/${lcnData.batch}/${lcnData.lcn}.png`}
                   width="300"
                 />
               </div>
