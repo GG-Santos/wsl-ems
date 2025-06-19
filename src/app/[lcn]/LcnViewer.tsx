@@ -344,18 +344,22 @@ export default function LcnViewer({
                       content = (
                         <div className="flex items-center text-gray-500 font-semibold">
                           <span className="text-xs">🥈&nbsp;</span>
-                          <span>{ranking}</span>
+                          <span>Rank {ranking}</span>
                         </div>
                       );
                     } else if (ranking === "3") {
                       content = (
                         <div className="flex items-center gap-2 text-amber-700 font-semibold">
                           <span className="text-xs">🥉&nbsp;</span>
-                          <span>{ranking}</span>
+                          <span>Rank {ranking}</span>
                         </div>
                       );
                     } else {
-                      content = <span className="text-gray-700">{ranking || "N/A"}</span>;
+                      content = (
+                        <div className="flex items-center gap-2 text-green-700 font-semibold">
+                          <span>Rank {ranking}</span>
+                        </div>
+                      );
                     }
 
                     return content;

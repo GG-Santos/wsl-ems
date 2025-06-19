@@ -11,7 +11,7 @@ const lcnData = {
   CCST: "00",
   CCSM: "00",
   batch: "BATCH-06",
-  ranking: "PASSED"
+  ranking: "0"
 }
 
 export default lcnData
