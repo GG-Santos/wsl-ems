@@ -65,10 +65,13 @@ type LcnData = {
   PAS: string;
   CCST: string;
   CCSM: string;
+  batch: string;
+  ranking: string;
 };
 
 interface SVGProps {
   SVGText: string;
+  Batch?: string;
 }
 
 const DateIssue: React.FC<SVGProps> = ({ SVGText }) => {
@@ -171,7 +174,7 @@ const EMTName: React.FC<SVGProps> = ({ SVGText }) => {
   );
 };
 
-const EMTImage: React.FC<SVGProps> = ({ SVGText }) => {
+const EMTImage: React.FC<SVGProps> = ({ SVGText, Batch }) => {
   return (
     <svg
       viewBox="0 0 3450 2210"
@@ -198,7 +201,7 @@ const EMTImage: React.FC<SVGProps> = ({ SVGText }) => {
           width="790"
           height="790"
           preserveAspectRatio="none"
-          href={`/assets/img/ID/${SVGText}.png`}
+          href={`/assets/img/ID/${Batch}/${SVGText}.png`}
         />
       </defs>
     </svg>
@@ -300,7 +303,7 @@ export default function LcnViewer({
                         <DateExpiry SVGText={lcnData.expiration} />
                         <LCNNumber SVGText={lcnData.lcn} />
                         <EMTName SVGText={lcnData.name} />
-                        <EMTImage SVGText={lcnData.lcn} />
+                        <EMTImage SVGText={lcnData.lcn} Batch={lcnData.batch} />
                       </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
@@ -323,7 +326,43 @@ export default function LcnViewer({
                     lcnData.registration
                   })`}
                 />
-                <Field label="Course Instructor" value="Wilky S. Lao" />
+<Field
+  label="Remarks"
+  value={
+    (() => {
+      const ranking = lcnData.ranking?.toUpperCase();
+      let content = null;
+
+      if (ranking === "1") {
+        content = (
+          <div className="flex items-center text-yellow-600 font-semibold">
+            <span className="text-xs">🥇&nbsp;</span>
+            <span>Rank {ranking}</span>
+          </div>
+        );
+      } else if (ranking === "2") {
+        content = (
+          <div className="flex items-center text-gray-500 font-semibold">
+            <span className="text-xs">🥈&nbsp;</span>
+            <span>{ranking}</span>
+          </div>
+        );
+      } else if (ranking === "3") {
+        content = (
+          <div className="flex items-center gap-2 text-amber-700 font-semibold">
+            <span className="text-xs">🥉&nbsp;</span>
+            <span>{ranking}</span>
+          </div>
+        );
+      } else {
+        content = <span className="text-gray-700">{ranking || "N/A"}</span>;
+      }
+
+      return content;
+    })()
+  }
+/>
+
               </form>
 
               <div>
