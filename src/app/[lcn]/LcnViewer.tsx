@@ -251,13 +251,14 @@ export default function LcnViewer({
 
           <div className="flex flex-col md:flex-row border-t border-gray-200">
             <div className="w-full md:w-1/3 border-r border-gray-200 p-5 space-y-5">
-              <div className="relative rounded-lg overflow-hidden bg-[#e6d3ca] w-full aspect-[4/5]">
+              <div className="relative rounded-lg overflow-hidden bg-gray-100 w-full aspect-[4/5]">
                 <img
                   alt="Profile"
                   className="object-cover w-full h-full"
                   height="375"
-                  src={`/assets/img/ID/${lcnData.batch}/${lcnData.lcn}.png`}
                   width="300"
+                  src={`/assets/img/ID/${lcnData.batch}/${lcnData.lcn}.png`}
+                  draggable={false}
                 />
               </div>
 
@@ -268,11 +269,11 @@ export default function LcnViewer({
                       View Certificate
                     </Button>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent className="select-none">
                     <DialogHeader>
                       <DialogTitle>Certificate</DialogTitle>
                       <DialogDescription>
-                        <Image src={Certificate} alt="Certificate" />
+                        <Image src={Certificate} alt="Certificate" draggable={false}/>
                       </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
@@ -284,7 +285,7 @@ export default function LcnViewer({
                       View Identity
                     </Button>
                   </DialogTrigger>
-                  <DialogContent>
+                  <DialogContent className="select-none">
                     <DialogHeader>
                       <DialogTitle>License Card</DialogTitle>
                       <DialogDescription className="relative w-full h-auto">
@@ -311,7 +312,7 @@ export default function LcnViewer({
               </div>
             </div>
 
-            <div className="w-full md:w-2/3 p-5 space-y-6">
+            <div className="w-full md:w-2/3 p-5 space-y-6 select-none">
               <h2 className="text-xm font-semibold text-gray-700 mb-2">
                 Profile Information
               </h2>
@@ -357,7 +358,7 @@ export default function LcnViewer({
                     } else {
                       content = (
                         <div className="flex items-center gap-2 text-green-700 font-semibold">
-                          <span>Rank {ranking}</span>
+                          <span>PASSED</span>
                         </div>
                       );
                     }
