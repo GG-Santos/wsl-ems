@@ -4,12 +4,12 @@ const lcnData = {
   issued: "August 04, 2024",
   expiration: "August 04, 2025",
   registration: "August 04, 2024",
-  FWE: "09",
-  SJE: "22",
-  EP: "08",
-  PAS: "10",
+  FWE: "9",
+  SJE: "9.2",
+  EP: "8.5",
+  PAS: "19.7",
   CCST: "20",
-  CCSM: "17",
+  CCSM: "23.9",
 }
 
 export default lcnData

@@ -41,6 +41,9 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --breakpoint-xs: 38rem;
+  --text-tiny: 0.8rem;
+  --text-t2: 0.65rem;
 }
 
 :root {

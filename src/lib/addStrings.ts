@@ -10,5 +10,6 @@ export function addNumberStrings(a: string, b: string, c: string, d: string, e: 
     throw new Error('Invalid number string');
   }
 
-  return numA + numB + numC + numD + numE + numF;
+  const sum = numA + numB + numC + numD + numE + numF;
+  return parseFloat(sum.toFixed(2));
 }
