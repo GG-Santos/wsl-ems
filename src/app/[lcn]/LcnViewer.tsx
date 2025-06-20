@@ -74,7 +74,7 @@ interface SVGProps {
   Batch?: string;
 }
 
-const DateIssue: React.FC<SVGProps> = ({ SVGText }) => {
+const DateExpiry: React.FC<SVGProps> = ({ SVGText }) => {
   return (
     <svg
       viewBox="0 0 3450 2210"
@@ -98,7 +98,7 @@ const DateIssue: React.FC<SVGProps> = ({ SVGText }) => {
   );
 };
 
-const DateExpiry: React.FC<SVGProps> = ({ SVGText }) => {
+const DateIssue: React.FC<SVGProps> = ({ SVGText }) => {
   return (
     <svg
       viewBox="0 0 3450 2210"
