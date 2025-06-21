@@ -4,7 +4,7 @@ const lcnData = {
   issued: "Issued Date",
   expiration: "Expiry Date",
   registration: "Latest Registration Date",
-  FWE: "00",
+  FWE: "10",
   SJE: "00",
   EP: "00",
   PAS: "00",
