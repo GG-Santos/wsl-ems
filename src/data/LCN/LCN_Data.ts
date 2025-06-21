@@ -13,6 +13,8 @@ import Data11 from "@/data/LCN/BATCH-11/LCN_Data";
 import Data12 from "@/data/LCN/BATCH-12/LCN_Data";
 import Data13 from "@/data/LCN/BATCH-13/LCN_Data";
 import Data14 from "@/data/LCN/BATCH-14/LCN_Data";
+import Data15 from "@/data/LCN/BATCH-15/LCN_Data";
+import Data16 from "@/data/LCN/BATCH-16/LCN_Data";
 
 const batchMap: Record<string, string> = {};
 
@@ -32,6 +34,8 @@ const sources: { batch: string; data: string[] }[] = [
   { batch: 'BATCH-12', data: Data12 },
   { batch: 'BATCH-13', data: Data13 },
   { batch: 'BATCH-14', data: Data14 },
+  { batch: 'BATCH-14', data: Data15 },
+  { batch: 'BATCH-14', data: Data16 },
 
 ];
 
