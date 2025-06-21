@@ -34,6 +34,7 @@ import ID11 from "@/assets/svg/License/11.svg";
 import ID12 from "@/assets/svg/License/12.svg";
 import ID13 from "@/assets/svg/License/13.svg";
 import ID14 from "@/assets/svg/License/14.svg";
+import ID15 from "@/assets/svg/License/15.svg";
 
 const licenseLayers = [
   ID0,
@@ -305,6 +306,11 @@ export default function LcnViewer({
                         <LCNNumber SVGText={lcnData.lcn} />
                         <EMTName SVGText={lcnData.name} />
                         <EMTImage SVGText={lcnData.lcn} Batch={lcnData.batch} />
+                        <Image
+                            src={ID15}
+                            alt={`Layer 15`}
+                            className={`absolute top-0 left-0`}
+                            />
                       </DialogDescription>
                     </DialogHeader>
                   </DialogContent>
