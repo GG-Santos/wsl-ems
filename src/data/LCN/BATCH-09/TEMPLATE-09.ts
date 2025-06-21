@@ -1,6 +1,6 @@
 const lcnData = {
   lcn: "TEMPLATE-09",
-  name: "Legal Name",
+  name: "gINO",
   issued: "Issued Date",
   expiration: "Expiry Date",
   registration: "Latest Registration Date",
