@@ -1,5 +1,5 @@
 const lcnData = {
-  lcn: "TEMPLATE-08",
+  lcn: "A02-1234501",
   name: "Legal Name",
   issued: "Issued Date",
   expiration: "Expiry Date",
@@ -10,7 +10,7 @@ const lcnData = {
   PAS: "00",
   CCST: "00",
   CCSM: "00",
-  batch: "BATCH-08",
+  batch: "BATCH-02",
   ranking: "0"
 }
 
